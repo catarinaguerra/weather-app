@@ -4,11 +4,110 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:100&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    
+    <script
+      src="https://kit.fontawesome.com/60e86f2194.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+     <link href="src/style.css" rel="stylesheet" type="text/css" />
+
+    <title>Weather App</title>
   </head>
   <body>
-    <h1>
-      My weather App
-    </h1>
+    <br />
+    <div class="container">
+      <div class="body-app grid-container">
+        <br />
+        <form id="city-form">
+          <div class="row">
+            <div class="col-10">
+              <input type="text" placeholder="search city" id="city-input"/>
+              <input type="submit" value="search">
+                <i class="fas fa-search"> </i>
+              <button id="current-weather">Current Weather</button>
+            </div>
+          </div>
+        </form>
+        <div class="row">
+          <div class="col">
+            <h1 class="city-today"><span id="city-name"> <strong> </strong> </span> </h1>
+          </div>
+        </div>
+        <hr />
+        <div>
+          <h2 class="date-today"></h2>
+        </div>
+      
+        <div>
+          <i class="fas fa-circle sun-size" id="weather-icon"></i>
+        </div>
+        <div >
+          <h3 class="weather-description" id="weather-description">
+          </h3>
+        </div>
+        <span id="temperature">
+        <div class="temperature-today" >
+          <span class="max-temp" id="temperature-max">Max  </span>
+          <span class="min-temp" id="temperature-min"> / Min</span>
+          </span>
+          <small> 
+          <a 
+          href="#" id="celsius"> 
+          C 
+          </a>
+            | 
+            <a 
+            href="#" id="fahrenheit"> 
+            F 
+            </a>
+            </small>
+        </div>
+        
+        <hr />
+        <div>
+          <div class="next-days-title">
+            <strong> Next 5 Days </strong>
+            <hr />
+            <div class="row next-days">
+              <div class="col">Monday</div>
+              <div class="col">Tuesday</div>
+              <div class="col">Wednesday</div>
+              <div class="col">Thursday</div>
+              <div class="col">Friday</div>
+            </div>
+            <div class="row weather-icon">
+              <div class="col border-right"><i class="fas fa-circle"></i></div>
+              <div class="col border-right">
+                <i class="fas fa-cloud-rain"></i>
+              </div>
+              <div class="col border-right">
+                <i class="fas fa-cloud-sun"></i>
+              </div>
+              <div class="col border-right"><i class="fas fa-cloud"></i></div>
+              <div class="col"><i class="fas fa-circle"></i></div>
+            </div>
+            <div class="row">
+              <div class="col">27 / 13</div>
+              <div class="col">28 / 13</div>
+              <div class="col">23 / 15</div>
+              <div class="col">25 / 15</div>
+              <div class="col">24 / 12</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     <script src="src/index.js"></script>
   </body>
 </html>

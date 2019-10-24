@@ -1,0 +1,65 @@
+body {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+form {
+  color: #ffebc4;
+  text-align: center;
+}
+
+.body-app {
+  border: 1px solid rgb(255, 194, 113);
+  margin: 10px 0 5px 0 auto;
+  max-width: 800px;
+  border-radius: 25px;
+  background-color: #ffebc4;
+}
+.city-today {
+  font-family: "Roboto", sans-serif;
+  border: 10px;
+  border-radius: 10px;
+  margin: 10px 10px 5px 5px;
+}
+.date-today {
+  font-family: "Roboto", sans-serif;
+  margin: 10px;
+  font-size: 25px;
+}
+.sun-size {
+  font-size: 200px;
+  color: #fed17c;
+}
+hr {
+  margin: 5px 30px 5px 30px;
+  color: blanchedalmond;
+}
+
+.weathe-description {
+  font-size: 7px;
+}
+.temperature-today {
+  font-family: "Roboto", sans-serif;
+}
+.max-temp {
+  font-size: 50px;
+}
+.min-temp {
+  font-size: 30px;
+}
+.next-days-title {
+  margin: 10px 0px 10px;
+  border-radius: 4px;
+}
+
+.weather-icon {
+  color: #646464;
+  font-size: 30px;
+}
+
+.bold-city {
+  font-weight: bold;
+}
+
+.active {
+  color: black;
+}
