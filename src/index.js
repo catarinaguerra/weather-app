@@ -88,54 +88,30 @@ function handlePosition(position) {
 
 //}}
 
-function convertToCelsius(response) {
-  let temperatureMax = document.querySelector("#temperature-max");
-  let temperatureMin = document.querySelector("#temperature-min");
-  let celsiusSign = document.querySelector("#celsius");
-  let fahrenheitSign = document.querySelector("#fahrenheit");
-  celsiusSign.classList.add("active");
-  fahrenheitSign.classList.remove("active");
-  temperatureMax.innerHTML = response.data.main.temp_max;
-  temperatureMin.innerHTML = response.data.main.temp_min;
-}
-
-function convertToFahrenheit(response) {
-  let temperatureMax = document.querySelector("#temperature-max");
-  let temperatureMin = document.querySelector("#temperature-min");
-  temperatureMax.innerHTML =
-    Math.round((response.data.main.temp_max * 9) / 5 + 32) + "º/";
-  temperatureMin.innerHTML =
-    Math.round((response.data.main.temp_min * 9) / 5 + 32) + "º";
-  let fahrenheitSign = document.querySelector("#fahrenheit");
-  let celsiusSign = document.querySelector("#celsius");
-  celsiusSign.classList.remove("active");
-  fahrenheitSign.classList.add("active");
-}
-
 function showWeather(response) {
   let temperatureMax = Math.round(response.data.main.temp_max);
   let currentTemperatureMax = document.querySelector("#temperature-max");
-  currentTemperatureMax.innerHTML = `${temperatureMax}º/`;
+  currentTemperatureMax.innerHTML = `${temperatureMax}`;
 
   let temperatureMin = Math.round(response.data.main.temp_min);
   let currentTemperatureMin = document.querySelector("#temperature-min");
-  currentTemperatureMin.innerHTML = `${temperatureMin}º`;
+  currentTemperatureMin.innerHTML = `${temperatureMin}`;
 
   let currentDescription = document.querySelector("#weather-description");
   currentDescription.innerHTML = response.data.weather[0].description;
 
   let currentIcon = document.querySelector("i");
-  currentIcon.innerHTML = `${response.data.weathe[0].icon}`;
+  currentIcon.innerHTML = `${response.data.weather[0].icon}`;
 }
 
 function showCurrentWeather(response) {
   let temperatureMax = Math.round(response.data.main.temp_max);
   let currentTemperatureMax = document.querySelector("#temperature-max");
-  currentTemperatureMax.innerHTML = `${temperatureMax}º/`;
+  currentTemperatureMax.innerHTML = `${temperatureMax}`;
 
   let temperatureMin = Math.round(response.data.main.temp_min);
   let currentTemperatureMin = document.querySelector("#temperature-min");
-  currentTemperatureMin.innerHTML = `${temperatureMin}º`;
+  currentTemperatureMin.innerHTML = `${temperatureMin}`;
   console.log(response.data.weather.description);
 
   let currentDescription = document.querySelector("#weather-description");
@@ -146,6 +122,39 @@ function showCurrentWeather(response) {
 
   let currentIcon = document.querySelector("i");
   currentIcon.innerHTML = `${response.data.weather[0].icon}`;
+}
+
+function convertToCelsius(event) {
+  event.preventDefault();
+  let temperatureMax = document.querySelector("#temperature-max");
+  let temperatureMin = document.querySelector("#temperature-min");
+  let fahrenheitMax = temperatureMax.innerHTML;
+  let celsiusMax = Math.round((fahrenheitMax - 32) * (5 / 9));
+  let fahrenheitMin = temperatureMin.innerHTML;
+  let celsiusMin = Math.round((fahrenheitMin - 32) * (5 / 9));
+  let celsiusSign = document.querySelector("#celsius");
+  let fahrenheitSign = document.querySelector("#fahrenheit");
+  celsiusSign.classList.add("active");
+  fahrenheitSign.classList.remove("active");
+  temperatureMax = celsiusMax;
+  temperatureMin = celsiusMin;
+}
+
+function convertToFahrenheit(event) {
+  event.preventDefault();
+  let temperatureMax = document.querySelector("#temperature-max");
+  let temperatureMin = document.querySelector("#temperature-min");
+  let celsiusMax = temperatureMax.innerHTML;
+  let fahrenheitMax = Math.round((celsiusMax * 9) / 5 + 32);
+  let celsiusMin = temperatureMin.innerHTML;
+  let fahrenheitMin = Math.round((celsiusMin * 9) / 5 + 32);
+  temperatureMax = fahrenheitMax;
+  temperatureMin = fahrenheitMin;
+
+  let fahrenheitSign = document.querySelector("#fahrenheit");
+  let celsiusSign = document.querySelector("#celsius");
+  celsiusSign.classList.remove("active");
+  fahrenheitSign.classList.add("active");
 }
 
 let currentWeather = document.querySelector("#current-weather");
