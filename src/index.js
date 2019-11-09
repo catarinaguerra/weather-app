@@ -85,6 +85,15 @@ function handlePosition(position) {
   axios.get(url).then(showCurrentWeather);
 }
 
+function showCityForecastCurrent(position) {
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+  let apiKey = `5f472b7acba333cd8a035ea85a0d4d4c`;
+  let url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+  let cityForecast = document.querySelector("#city-name-forecast");
+  cityForecast.innerHTML = response.data.name;
+}
+
 //function replaceCity(cityName) {
 //event.preventDefault();
 //let searchValue = document.querySelector("#city-input");
@@ -107,8 +116,11 @@ function showWeather(response) {
   let currentDescription = document.querySelector("#weather-description");
   currentDescription.innerHTML = response.data.weather[0].description;
 
-  let currentIcon = document.querySelector("i");
-  currentIcon.innerHTML = `${response.data.weather[0].icon}`;
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function showCurrentWeather(response) {
@@ -127,8 +139,12 @@ function showCurrentWeather(response) {
   let currentCity = document.querySelector("#city-name");
   currentCity.innerHTML = `Today in ${response.data.name}`;
 
-  let currentIcon = document.querySelector("i");
-  currentIcon.innerHTML = `${response.data.weather[0].icon}`;
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  showCityForecastCurrent();
 }
 
 function convertToCelsius(event) {

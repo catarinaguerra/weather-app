@@ -25,42 +25,37 @@ hr {
   font-family: "Roboto", sans-serif;
   border: 10px;
   border-radius: 10px;
-  margin: 10px 10px 5px 5px;
+  margin: 20px 20px 10px 10px;
+  font-size: 30px;
 }
 .date-today {
   font-family: "Roboto", sans-serif;
   margin: 10px;
-  font-size: 25px;
+  font-size: 20px;
 }
-.sun-size {
-  font-size: 200px;
-  color: #fed17c;
+.icon-size {
+  width: 200px;
 }
 hr {
   margin: 5px 30px 5px 30px;
   color: blanchedalmond;
 }
 
-.weathe-description {
-  font-size: 7px;
+.weather-description {
+  font-size: 15px;
 }
 .temperature-today {
   font-family: "Roboto", sans-serif;
 }
 .max-temp {
-  font-size: 50px;
+  font-size: 40px;
 }
 .min-temp {
-  font-size: 30px;
+  font-size: 25px;
 }
 .next-days-title {
   margin: 10px 0px 10px;
   border-radius: 4px;
-}
-
-.weather-icon {
-  color: #646464;
-  font-size: 30px;
 }
 
 .bold-city {
