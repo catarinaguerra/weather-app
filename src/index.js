@@ -64,6 +64,13 @@ function searchWeather(event) {
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&appid=${apiKey}&units=metric`;
 
   axios.get(url).then(showWeather);
+  showCityForecast();
+}
+
+function showCityForecast(event) {
+  let cityInput = document.querySelector("#city-input");
+  let cityForecast = document.querySelector("#city-name-forecast");
+  cityForecast.innerHTML = `${cityInput.value}`;
 }
 
 function searchCurrentWeather(response) {

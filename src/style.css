@@ -6,7 +6,9 @@ form {
   color: #ffebc4;
   text-align: center;
 }
-
+hr {
+  padding: 5px 5px 5px 0;
+}
 .open-source {
   margin: 10px 0 5px 0 auto;
   max-width: 800px;
