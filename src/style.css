@@ -17,7 +17,7 @@ hr {
 .body-app {
   border: 1px solid rgb(255, 194, 113);
   margin: 10px 0 5px 0 auto;
-  max-width: 800px;
+  max-width: 1000px;
   border-radius: 25px;
   background-color: #ffebc4;
 }
@@ -51,7 +51,7 @@ hr {
   font-size: 40px;
 }
 .min-temp {
-  font-size: 25px;
+  font-size: 35px;
 }
 .next-days-title {
   margin: 10px 0px 10px;
@@ -64,4 +64,8 @@ hr {
 
 .active {
   color: black;
+}
+
+.weather-forecast {
+  margin-top: 10px;
 }
