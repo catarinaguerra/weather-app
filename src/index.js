@@ -165,20 +165,16 @@ function convertToCelsius(event) {
 
 function convertToFahrenheit(event) {
   event.preventDefault();
+  let fahrenheitMax = Math.round((14 * 9) / 5 + 32);
   let temperatureMax = document.querySelector("#temperature-max");
-  let temperatureMin = document.querySelector("#temperature-min");
-  let celsiusMax = temperatureMax.innerHTML;
-  let fahrenheitMax = Math.round((celsiusMax * 9) / 5 + 32);
-  let celsiusMin = temperatureMin.innerHTML;
-  let fahrenheitMin = Math.round((celsiusMin * 9) / 5 + 32);
-  temperatureMax = fahrenheitMax;
-  temperatureMin = fahrenheitMin;
+  temperatureMax.innerHTML = fahrenheitMax;
 
-  let fahrenheitSign = document.querySelector("#fahrenheit");
-  let celsiusSign = document.querySelector("#celsius");
-  celsiusSign.classList.remove("active");
-  fahrenheitSign.classList.add("active");
+  let fahrenheitMin = Math.round((14 * 9) / 5 + 32);
+  let temperatureMin = document.querySelector("#temperature-min");
+  temperatureMin.innerHTML = fahrenheitMin;
 }
+
+let celsiusMax = null;
 
 let currentWeather = document.querySelector("#current-weather");
 currentWeather.addEventListener("click", searchCurrentWeather);
@@ -193,3 +189,16 @@ let fahrenheit = document.querySelector("#fahrenheit");
 fahrenheit.addEventListener("click", convertToFahrenheit);
 
 updateTime();
+
+//let temperatureMin = document.querySelector("#temperature-min");
+//let celsiusMax = temperatureMax.innerHTML;
+//let fahrenheitMax = Math.round((celsiusMax * 9) / 5 + 32);
+//let celsiusMin = temperatureMin.innerHTML;
+//let fahrenheitMin = Math.round((celsiusMin * 9) / 5 + 32);
+//temperatureMax = fahrenheitMax;
+//temperatureMin = fahrenheitMin;
+
+//let fahrenheitSign = document.querySelector("#fahrenheit");
+//let celsiusSign = document.querySelector("#celsius");
+//celsiusSign.classList.remove("active");
+//fahrenheitSign.classList.add("active");
